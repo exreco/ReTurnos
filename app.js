@@ -7,7 +7,7 @@ app.get('/', ( req, res ) => {
     
     console.log('Peticion recibida')
 
-    res.status(200).send('<h1>Hola Mundo!</h1>')
+    res.status(200).send('<h1>Hola Mundo sin .env</h1>')
 })
 
 const PORT = process.env.PORT || 4000
