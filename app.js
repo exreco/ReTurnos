@@ -1,17 +1,21 @@
 
 require('dotenv').config();
+
 const express = require('express');
+const path = require('path');
 const app = express();
 
-app.get('/', ( req, res ) => {
-    
-    console.log('Peticion recibida')
+// app.get('/', ( req, res ) => {
+//     console.log('Peticion recibida');
+// })
 
-    res.status(200).send('<h1>Hola Mundo sin .env</h1>')
-})
+app.use(express.static(path.join(__dirname, 'public')));
 
-const PORT = process.env.PORT || 4000
+
+
+
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-    console.log(`escuchando en el puerto ${PORT}`)
+    console.log(`escuchando en el puerto ${PORT}`);
 })
